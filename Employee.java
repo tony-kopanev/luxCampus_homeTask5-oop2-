@@ -7,9 +7,18 @@ public class Employee {
 
   public int getId() { return id; }
 
+  public int getSalary() { return salary; }
+
+  public int getFixedBugs() { return fixedBugs; }
+
+  public int getDefaultBugRate() { return defaultBugRate; }
+
+  public String getName() { return name; }
+
   public Employee(String name, int id, boolean gender){
     this.name = name;
-    this.id =  Integer.parseInt(String.valueOf(setRandom(1, 99)) + id);
+//    this.id =  Integer.parseInt(String.valueOf(setRandom(1, 99)) + id);
+    this.id = id;
     this.gender = gender;
     this.age = setRandom(18, 45);
     this.salary = setRandom(18000, 53000);
