@@ -1,14 +1,17 @@
 package day4;
 
 import java.util.Arrays;
+import java.util.Comparator;
 
 public class EmployeeService {
   private Employee[] employees = null;
   public EmployeeService(Employee[] employees){ this.employees = employees; }
 
+  public Employee[] getEmployees() { return employees; }
+
   public void printEmployees(){
     // сортируем по идшнику
-    Arrays.stream(employees).sorted((a, b) -> a.getId() - b.getId()).forEach(System.out::println);
+    Arrays.stream(employees).sorted(Comparator.comparingInt(Employee::getId)).forEach(System.out::println);
   }
 
   public double calculateSalary(){

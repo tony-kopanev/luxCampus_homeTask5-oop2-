@@ -13,12 +13,21 @@ public class Employee {
 
   public int getDefaultBugRate() { return defaultBugRate; }
 
+  public void setFullSalary(int salary, int fixedBugs, int defaultBugRate){
+    this.salary = salary;
+    this.fixedBugs = fixedBugs;
+    this.defaultBugRate = defaultBugRate;
+  }
+
+  public void setId(int id) { this.id = id; }
+
   public String getName() { return name; }
+
+  public void setName(String name) { this.name = name; }
 
   public Employee(String name, int id, boolean gender){
     this.name = name;
-//    this.id =  Integer.parseInt(String.valueOf(setRandom(1, 99)) + id);
-    this.id = id;
+    this.id =  Integer.parseInt(String.valueOf(setRandom(1, 99)) + id);
     this.gender = gender;
     this.age = setRandom(18, 45);
     this.salary = setRandom(18000, 53000);
