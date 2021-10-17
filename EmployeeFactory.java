@@ -1,4 +1,4 @@
-package day4;
+package day5;
 
 public class EmployeeFactory {
   private static final String[] maleNames = {"Mike", "Tony", "Vova", "Alex", "Andrew", "Max", "Kevin", "Oleg", "Anatoliy", "Kostya"};

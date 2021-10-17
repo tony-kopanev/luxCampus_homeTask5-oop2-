@@ -1,9 +1,9 @@
-package day4;
+package day5;
 
 public class Employee {
-  private int id, age, salary, fixedBugs, defaultBugRate;
-  private String name;
-  private boolean gender;
+  protected int id, age, salary, fixedBugs, defaultBugRate;
+  protected String name;
+  protected boolean gender;
 
   public int getId() { return id; }
 
@@ -17,6 +17,10 @@ public class Employee {
     this.salary = salary;
     this.fixedBugs = fixedBugs;
     this.defaultBugRate = defaultBugRate;
+  }
+
+  public double getFullSalary(){
+    return salary + (fixedBugs * defaultBugRate);
   }
 
   public void setId(int id) { this.id = id; }

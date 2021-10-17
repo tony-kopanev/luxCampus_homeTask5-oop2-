@@ -1,4 +1,4 @@
-package day4;
+package day5;
 
 import java.util.Arrays;
 import java.util.Comparator;
@@ -15,13 +15,7 @@ public class EmployeeService {
   }
 
   public double calculateSalary(){
-    return Arrays.stream(employees).reduce(0.0, (sum, cur) -> {
-      double salary = (double) cur.getSalary();
-      double fixedBugs = (double) cur.getFixedBugs();
-      double bugRate = (double) cur.getDefaultBugRate();
-
-      return (double) (sum + (salary + (fixedBugs * bugRate)));
-    }, Double::sum);
+    return Arrays.stream(employees).reduce(0.0, (sum, cur) -> sum + cur.getFullSalary(), Double::sum);
   }
 
   public Employee getById(int id) {
