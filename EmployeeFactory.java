@@ -6,10 +6,26 @@ public class EmployeeFactory {
 
   public static Employee[] generateEmployees(int size){
     Employee[] result = new Employee[size];
+    String[] positions = {"dev", "mng", "des", "other"};
     for(int i=0; i<size; i++){
       boolean gender = getGender();
+      String pos = positions[(int) (Math.random() * positions.length)];
       String name = gender ? getName(maleNames) : getName(famaleNames);
-      result[i] = new Employee(name, i, gender);
+
+      switch (pos) {
+        case "dev":
+          result[i] = new Developer(name, i, gender);
+          break;
+        case "mng":
+          result[i] = new Manager(name, i, gender);
+          break;
+        case "des":
+          result[i] = new Designer(name, i, gender);
+          break;
+        default:
+          result[i] = new Employee(name, i, gender);
+          break;
+      }
     }
 
     return result;

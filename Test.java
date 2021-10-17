@@ -7,7 +7,7 @@ public class Test {
   private static Employee[] employees = EmployeeFactory.generateEmployees(10);
   private static EmployeeService employeeService = new EmployeeService(employees);
   public static void main(String[] args) {
-    testRemove("testRemove #1: ");
+    employeeService.printByPos();
   }
 
   private static String previewPrintEmployees(){

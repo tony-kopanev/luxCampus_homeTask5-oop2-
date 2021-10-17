@@ -1,9 +1,10 @@
 package day5;
 
-public class Employee {
+  public class Employee {
   protected int id, age, salary, fixedBugs, defaultBugRate;
   protected String name;
   protected boolean gender;
+  protected Pos position = Pos.EMPLOYEE;
 
   public int getId() { return id; }
 
@@ -39,7 +40,7 @@ public class Employee {
     this.defaultBugRate = setRandom(40, 110);
   }
 
-  private int setRandom(int min, int max){
+  protected int setRandom(int min, int max){
     return (int) (min + Math.random() * (max+1-min));
   }
 
@@ -47,6 +48,10 @@ public class Employee {
   public String toString(){
     return String.format("Employee #%d: %s\n%s, age: %d,\nsalary: %d,\nfixedBugs: %d,\ndefBugRate: %d.\n---\n",
             id, name, gender ? "Male" : "Female", age, salary, fixedBugs, defaultBugRate);
+  }
+
+  public String toStringPosition(){
+    return String.format("Name: %s\n%s", getName(), position.toString());
   }
 
 

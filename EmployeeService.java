@@ -85,4 +85,10 @@ public class EmployeeService {
 
     return result;
   }
+
+  // для теста наследования
+  public void printByPos(){
+//    Arrays.stream(employees).map(Employee::toStringPosition).forEach(System.out::println);
+    Arrays.stream(employees).forEach(employee -> System.out.println(employee.toStringPosition()));
+  }
 }
